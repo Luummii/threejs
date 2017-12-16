@@ -1,8 +1,8 @@
-import Home from '../pages/Home.vue'
+import CubeAnimation from '../pages/CubeAnimation.vue'
 import Auth from '../pages/Auth.vue'
 
 export default [
-  { path: '/', redirect: 'Home' },
-  { path: '/home', name: 'Home', component: Home },
+  { path: '/', redirect: 'CubeAnimation' },
+  { path: '/CubeAnimation', name: 'CubeAnimation', component: CubeAnimation },
   { path: '/auth', name: 'Auth', component: Auth }
 ]
