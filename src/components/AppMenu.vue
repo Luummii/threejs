@@ -1,16 +1,18 @@
 <template lang="html">
   <nav>
     <ul>
-      <router-link v-for="(item, index) in items_menu" tag="li" :key="index" :to="item.path">{{ item.name }}</router-link>
+      <router-link v-for="(item, index) in itemsMenu" tag="li" :key="index" :to="item.path">{{ item.name }}</router-link>
     </ul>    
   </nav>
 </template>
 
 <script>
+import routes from '../routes'
+
 export default {    
   data () {
     return {
-      items_menu: [ { path: '/home', name: 'Home' }, { path: '/auth', name: 'Auth' } ]
+      itemsMenu: routes      
     }
   }
 }
@@ -18,21 +20,26 @@ export default {
 
 <style lang="stylus" scoped>
 nav
-  background-color #C6C2D3
-  font-size 20px
-  text-align center
+  background-color #2D2E40
+  font-size 16px
+  position fixed
+  top 0
+  left 0
+  bottom 0
+  width 180px
 
-li
-  display inline-block
-  color #E3E2EA
+  ul
+    padding 10px
 
-li:nth-child(even)
-  margin 10px
+    li
+      color #005954
+      list-style none
+      margin-top 7px
 
-li:hover
-  color black
-  cursor pointer 
+    li:hover
+      color #00B5AC
+      cursor pointer 
 
-nav li.router-link-active 
-  color black
+    li.router-link-active 
+      color #00B5AC
 </style>

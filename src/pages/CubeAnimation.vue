@@ -1,5 +1,5 @@
 <template>
-  <div class="info">Description</div>
+  <div id="test"></div>
 </template>
 
 <script>
@@ -15,13 +15,14 @@ export default {
   },
   mounted() {       
     const scene = new THREE.Scene()
+    scene.getObjectByName( "objectName" )
     
     const camera = new THREE.PerspectiveCamera(45, window.innerWidth/window.innerHeight, 0.1, 1000)    
     camera.lookAt(new THREE.Vector3(0, 0, 0))
 
     const renderer = new THREE.WebGLRenderer()
     renderer.setSize(window.innerWidth, window.innerHeight)
-    document.body.appendChild(renderer.domElement)
+    document.getElementById("test").appendChild(renderer.domElement)
 
     // cube
     const geometry = new THREE.BoxGeometry(1, 1, 1)
@@ -55,8 +56,7 @@ export default {
         this.x -= .05            
         this.y -= .05 
       }
-      if (this.z >= 40 || this.z <= 15) this.muve = !this.muve          
-      console.log(this.z)        
+      if (this.z >= 40 || this.z <= 15) this.muve = !this.muve                 
       renderer.render(scene, camera)
       requestAnimationFrame(animate)
     }
@@ -66,11 +66,6 @@ export default {
 </script>
 
 <style lang="stylus">
-.info 
-	position absolute
-	top 10px
-	width 100%
-	text-align center
-	z-index 100
-	display block
+#test
+ overflow hidden 
 </style>

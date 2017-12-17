@@ -1,10 +1,8 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
-import { sync } from 'vuex-router-sync'
 
 import App from './App.vue'
 import routes from './routes'
-import store from './store/index'
 
 if (process.env.NODE_ENV === 'production') {
   Vue.config.devtools = false
@@ -19,11 +17,8 @@ export const router = new VueRouter({
   routes
 })
 
-sync(store, router)
-
 new Vue({
   el: '#app',
-  store,
   router,
   template: '<App/>',
   components: { App }

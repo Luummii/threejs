@@ -1,5 +1,6 @@
 <template lang="html">
-  <div id="app">       
+  <div id="app">
+    <app-menu></app-menu>       
     <router-view></router-view>
   </div>
 </template>
@@ -17,7 +18,4 @@ export default {
 
 <style lang="stylus">
 @import './assets/lib/normalize'
-
-html, body
- overflow hidden 
 </style>
