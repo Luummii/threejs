@@ -20,6 +20,7 @@ export default {
   },
   mounted() {       
     const scene = new THREE.Scene()
+    scene.background = new THREE.Color('#191A2D')
     
     const camera = new THREE.PerspectiveCamera(45, window.innerWidth/window.innerHeight, 0.1, 1000)    
     camera.lookAt(new THREE.Vector3(0, 0, 0))
@@ -29,7 +30,7 @@ export default {
     renderer.setSize(window.innerWidth, window.innerHeight)
 
     // cube
-    const geometry = new THREE.BoxGeometry(1, 2, 1)
+    const geometry = new THREE.BoxGeometry(3, 2, 1)
     const blue = new THREE.MeshBasicMaterial({ color: 'blue' })
     const red = new THREE.MeshBasicMaterial({ color: 'red' })
     const green = new THREE.MeshBasicMaterial({ color: 'green' })

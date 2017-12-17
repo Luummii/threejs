@@ -1,5 +1,8 @@
 <template lang="html">
   <nav>
+    <div class="logo">
+      <img src="../assets/img/logo.png">
+    </div>      
     <ul>
       <router-link v-for="(item, index) in itemsMenu" tag="li" :key="index" :to="item.path">{{ item.name }}</router-link>
     </ul>    
@@ -19,6 +22,13 @@ export default {
 </script>
 
 <style lang="stylus" scoped>
+.logo
+  text-align center
+  img
+    width 40px
+    height 40px
+    margin-top 10px 
+
 nav
   background-color #2D2E40
   font-size 16px
@@ -29,16 +39,17 @@ nav
   width 180px
 
   ul
-    padding 10px
+    padding-left 10px
 
     li
       color #005954
       list-style none
-      margin-top 7px
+      margin-top 8px
 
     li:hover
       color #00B5AC
       cursor pointer 
+      transition .8s
 
     li.router-link-active 
       color #00B5AC
