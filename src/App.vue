@@ -18,4 +18,12 @@ export default {
 
 <style lang="stylus">
 @import './assets/lib/normalize'
+
+.container
+  overflow hidden 
+  position absolute
+  top 0
+  left 180px
+  right 0
+  bottom 0
 </style>
